@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lets figure this out!</title>
+		
+		<style type="text/css">
+			body{
+				background: url(https://i.pinimg.com/originals/09/f2/a0/09f2a07a438b19a2174f66eaba699098.jpg) no-repeat center center;
+				text-align: center;
+				background-size: 160%;
+			}
+			h5{
+				color:black;
+  				font-size: 1em;
+   				font-family: Helvetica, Arial, sans-serif;
+   				text-shadow: 2px 4px 5px  black;  
+  				font-weight:bold;
+			}
+			h2{
+				color:black;
+  				font-size: 2em;
+   				font-family: Helvetica, Arial, sans-serif;
+   				text-shadow: 2px 4px 5px  black;  
+  				font-weight:bold;
+			}
+			h1{
+				color:black;
+  				font-size: 3em;
+   				font-family: Helvetica, Arial, sans-serif;
+   				text-shadow: 2px 4px 5px  black;  
+  				font-weight:bold;
+			}
+			#calccontainment{
+				background-color: aquamarine;
+				background-size: 100px;
+				width: 225px;
+				height:500px ;
+				border: 2px solid purple;
+				padding: 0px 100px;
+				border-radius: 50px;
+				margin: 20px auto;
+				box-shadow: 0px 0px 3px 6px black;
+			}
+			#result{
+				border:1px solid black;
+  				border-radius:5px;
+				box-shadow: 0px 0px 1px black;
+  				text-align: right;
+  				font: 20px bold;
+  				padding:10px;
+  				width: 100%;
+  
+			}
+			#key{
+				border-width: 15px;
+				border-left-width: 3.5em;
+				box-shadow: 0px 0px 2px 1px black;
+  				border-radius:7px;
+  				width: 47%;
+
+
+			}
+			#keys{
+				border-width: 15px; 
+				box-shadow: 0px 0px 2px 1px black;
+  				border-radius:7px;
+  				width: 23%;
+			}
+			form{
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Advanced Calculator</h1>
+		
+		<div id="calccontainment" >
+			<h2>Try me!!!</h2> 
+			<form name="calculator">
+				<input type="text" style= "display:block" id="result">
+				
+				<br>
+				<input type="button" value="C" id="keys" onclick="eraseDigit('')" >
+				<input type="button" value="CE" id="keys" onclick="backSpace()" >
+				<input type="button" value="+" id="keys" onclick="addToScreen('+')" >
+				<input type="button" value="-" id="keys" onclick="addToScreen('-')" >
+				<br>
+				<input type="button" value="1" id="keys" onclick="addToScreen('1')" >
+				<input type="button" value="2" id="keys" onclick="addToScreen('2')" >
+				<input type="button" value="3" id="keys" onclick="addToScreen('3')" >
+				<input type="button" value="/" id="keys" onclick="addToScreen('/')" >				
+				<br>
+				<input type="button" value="4" id="keys" onclick="addToScreen('4')" >
+				<input type="button" value="5" id="keys" onclick="addToScreen('5')" >
+				<input type="button" value="6" id="keys" onclick="addToScreen('6')" >
+				<input type="button" value="x" id="keys" onclick="addToScreen('*')" >
+				<br>
+				<input type="button" value="7" id="keys" onclick="addToScreen('7')" >
+				<input type="button" value="8" id="keys" onclick="addToScreen('8')" >
+				<input type="button" value="9" id="keys" onclick="addToScreen('9')" >
+				<input type="button" value="." id="keys" onclick="addToScreen('.')" >
+				<br>
+				<input type="button" value="0" id="key" onclick="addToScreen('0')" >
+				<input type="button" value="=" id="key" onclick="equal()" >	
+				<br>		
+				<h5>Mathematics is not about numbers, equations, computations, or algorithms: it is about UNDERSTANDING.</h5>
+	</div>
+
+
+			</form>
+
+
+				<script type="text/javascript"> 
+					var result
+
+					function addToScreen(value){
+						document.getElementById('result').value+=value;
+					}
+
+					function equal(){
+						document.getElementById('result').value = (eval(document.getElementById('result').value));
+						
+					}
+
+					function backSpace(){
+						document.getElementById('result').value = document.getElementById('result').value.slice(0,-1);
+					}
+					function eraseDigit(){
+						document.getElementById('result').value = document.getElementById('result').value.substring(0,-1);
+					}
+				</script>
+
+	</body>
+</html>
